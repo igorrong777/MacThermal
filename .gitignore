@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+._*
+
+# Build products
+*.app
+MacThermal
+
+# Local backups
+MacThermal-V1*
+/MacThermal.swift
