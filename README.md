@@ -5,7 +5,7 @@ A tiny native macOS menu bar utility for monitoring system thermal state.
 **Tiny. Native. Private. Free.**
 
 - No analytics
-- No network access
+- No networking code
 - No background polling
 - No account
 - No subscription
@@ -47,11 +47,8 @@ Run:
 MacThermal:
 
 - does not contain networking code
-- does not request network entitlements
-- runs inside the macOS App Sandbox
 - does not collect or store user data
 - does not use analytics or telemetry
-
 ## License
 
 MIT

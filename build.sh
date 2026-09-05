@@ -62,13 +62,8 @@ EOF
 # Remove Finder / FileProvider metadata
 xattr -cr "$APP_DIR"
 
-# Sign with Sandbox entitlement
-codesign \
---force \
---sign - \
---entitlements MacThermal.entitlements \
-"$APP_DIR"
-
+# Local ad-hoc signature
+codesign --force --sign - "$APP_DIR"
 # Verify signature
 codesign --verify --verbose=2 "$APP_DIR"
 
