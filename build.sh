@@ -15,7 +15,7 @@ rm -rf "$BUILD_ROOT"
 
 # Create app structure
 mkdir -p "$APP_DIR/Contents/MacOS"
-
+mkdir -p "$APP_DIR/Contents/Resources"
 # Compile
 swiftc -parse-as-library "$SOURCE" \
 -o "$APP_DIR/Contents/MacOS/$APP_NAME" \
@@ -24,6 +24,7 @@ swiftc -parse-as-library "$SOURCE" \
 -framework Foundation \
 -framework Combine
 
+cp Assets/MacThermal-v2.icns "$APP_DIR/Contents/Resources/MacThermal-v2.icns"
 # Create Info.plist
 cat > "$APP_DIR/Contents/Info.plist" <<'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
@@ -44,14 +45,17 @@ cat > "$APP_DIR/Contents/Info.plist" <<'EOF'
     <key>CFBundleExecutable</key>
     <string>MacThermal</string>
 
+<key>CFBundleIconFile</key>
+<string>MacThermal-v2.icns</string>
+
     <key>CFBundlePackageType</key>
     <string>APPL</string>
 
     <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
+<string>1.0.2</string>
 
-    <key>CFBundleVersion</key>
-    <string>1</string>
+<key>CFBundleVersion</key>
+<string>3</string>
 
     <key>LSUIElement</key>
     <true/>
